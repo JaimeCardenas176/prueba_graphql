@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "sourceMap": true,
+      "outDir": "dist",
+      "noUnusedLocals": true,
+      "allowSyntheticDefaultImports": true,
+      "noUnusedParameters": false,
+      "noImplicitAny": false,
+      "lib": ["esnext.asynciterable", "es2015", "dom"],
+      "types": ["node", "express"]
+    },
+    "include": ["src/**/*.ts"]
+  }

@@ -1,0 +1,39 @@
+{
+  "name": "graph",
+  "version": "1.0.0",
+  "description": "learning to use graphql schemas & apollo",
+  "main": "dist/app.js",
+  "scripts": {
+    "copyfiles": "copyfiles  \"src/**/*.ejs\" \"src/**/*.json\" dist -u 1",
+    "demon": "nodemon -e ts,graphql app",
+    "dev": "ts-node-dev --respawn --transpileOnly ./app.ts",
+    "prod": "tsc && node ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "olddev": "npm run compile && node --inspect .",
+    "compile": "rm -rf /dist && npm run copyfiles && tsc",
+    "lint-fix":"standard --fix"
+  },
+  "author": "jaime cardenas",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^12.12.9",
+    "copyfiles": "^2.1.1",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
+    "nodemon": "^1.19.4",
+    "standard": "^14.3.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "*",
+    "@types/express": "*",
+    "@types/express-graphql": "*",
+    "@types/graphql": "*",
+    "@types/node": "*"
+  },
+  "keywords": [
+    "graphQL"
+  ]
+}
