@@ -7,7 +7,7 @@ export class Person{
     age: number;
     cars: [Car];
 
-    constructor(id, name, age, car){
+    constructor(id: string, name: string, age: number, car: [Car]){
         this.id=id;
         this.name= name;
         this.age=age;

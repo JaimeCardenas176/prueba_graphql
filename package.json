@@ -9,7 +9,7 @@
     "dev": "ts-node-dev --respawn --transpileOnly ./app.ts",
     "prod": "tsc && node ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "olddev": "npm run compile && node --inspect .",
+    "olddev": "npm run compile && node  .",
     "compile": "rm -rf /dist && npm run copyfiles && tsc",
     "lint-fix":"standard --fix"
   },

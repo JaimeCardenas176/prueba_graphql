@@ -8,7 +8,7 @@ exports.all_cars = [new car_1.Car("Toyota avensis", "1234 ABC", "2002", car_stat
     new car_1.Car("Citröen Saxo", "3545 ERP", "2007", car_state_1.CarState.OLD),
     new car_1.Car("Mazda 3", "4586 LSB", "2012", car_state_1.CarState.NEW)];
 const all_persons = [new person_1.Person('1', 'Jaime', 25, [exports.all_cars[0]]),
-    new person_1.Person('2', 'Pablo', 23, [exports.all_cars[1], exports.all_cars[2]]),
+    new person_1.Person('2', 'Pablo', 23, [exports.all_cars[1]]),
     new person_1.Person('3', 'Paco', 18, [exports.all_cars[3]])];
 exports.carsResolver = (root, args, context) => {
     let cars = exports.all_cars;
@@ -35,16 +35,14 @@ exports.personById = (root, args, context) => {
     return res;
 };
 exports.resolvers = {
-    Query: {
-        carsResolver: (root, args, context) => exports.carsResolver(root, args, context),
-        personsResolver: (root, args, context) => exports.personsResolver(root, args, context),
-        carById: (root, args, context) => exports.carById(root, args, context),
-        personById: (root, args, context) => exports.personById(root, args, context)
-    },
+    cars: (root, args, context) => exports.carsResolver(root, args, context),
+    personsResolver: (root, args, context) => exports.personsResolver(root, args, context),
+    carById: (root, args, context) => exports.carById(root, args, context),
+    personById: (root, args, context) => exports.personById(root, args, context),
     CarState: {
         UNUSABLE: 0,
-        NEW: 1,
-        OLD: 2
+        OLD: 1,
+        NEW: 2,
     }
 };
 //# sourceMappingURL=resolvers.js.map

@@ -22,7 +22,7 @@ type Person{
 }
 
 type Query{
-    cars: [Car]!
+    cars: [Car]
     persons: [Person]
     carById(id: ID!): Car
     personById(id: ID!): Person

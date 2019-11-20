@@ -9,7 +9,7 @@ export const all_cars = [new Car("Toyota avensis","1234 ABC","2002", CarState.OL
 
 
 const all_persons = [new Person('1','Jaime', 25, [all_cars[0]]),
-                     new Person('2','Pablo', 23, [all_cars[1], all_cars[2]]),
+                     new Person('2','Pablo', 23, [all_cars[1]]),
                      new Person('3','Paco', 18, [all_cars[3]])];
 
 
@@ -43,15 +43,15 @@ export const personById = (root, args, context) => {
 }
 
 export const resolvers = {
-    Query:{
-        carsResolver: (root, args, context) => carsResolver(root, args, context),
+    
+        cars: (root, args, context) => carsResolver(root, args, context),
         personsResolver: (root, args, context) => personsResolver(root, args, context),
         carById:(root, args, context) => carById(root, args, context),
-        personById: (root, args, context) => personById(root, args, context)
-    },
-    CarState:{
+        personById: (root, args, context) => personById(root, args, context),
+    
+    CarState: {
         UNUSABLE: 0,
-        NEW: 1,
-        OLD: 2
-    }
+        OLD: 1,
+        NEW: 2,
+      }
 }
