@@ -18,7 +18,7 @@
   "dependencies": {
     "@types/node": "^12.12.9",
     "copyfiles": "^2.1.1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-graphql": "^0.9.0",
     "graphql": "^14.5.8",
     "nodemon": "^1.19.4",
